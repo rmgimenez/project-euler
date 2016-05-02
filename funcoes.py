@@ -3,20 +3,19 @@ Funções de ajuda para resolver os problemas
 '''
 
 # retorna true se o número for primo
-def eh_primo(numero):
-	if numero % 2 == 0:
-		return FALSE
-	else:
-		limite = round(numero / 3)
-		i = 3
-		outro_divisor = false
-		while i <= limite:
-			if numero % i == 0:
-				outro_divisor = true
-			i += 2
-		if(outro_divisor):
-			return false
-		else:
-			return true
+def is_prime(n):
+	if n == 2 or n == 3: return True
+	if n < 2 or n%2 == 0: return False
+	if n < 9: return True
+	if n%3 == 0: return False
+	r = int(n**0.5)
+	f = 5
+	while f <= r:
+		#print('\t',f)
+		if n%f == 0: return False
+		if n%(f+2) == 0: return False
+		f +=6
+	return True 
 
-print(eh_primo(8))
+for x in range(1, 900):
+	if(is_prime(x)): print(x)
