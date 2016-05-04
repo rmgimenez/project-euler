@@ -15,7 +15,5 @@ def is_prime(n):
 		if n%f == 0: return False
 		if n%(f+2) == 0: return False
 		f +=6
-	return True 
+	return True
 
-for x in range(1, 900):
-	if(is_prime(x)): print(x)
