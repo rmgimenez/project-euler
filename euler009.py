@@ -11,3 +11,13 @@ Find the product abc.
 
 Answer: 31875000
 '''
+def valor_c(a, b):
+	return (a**2 + b**2)**0.5
+
+for a in range(1,1000):
+	for b in range(1,1000):
+		c = valor_c(a, b)
+		if a + b + c == 1000:
+			resposta = a * b * c
+
+print(resposta)
