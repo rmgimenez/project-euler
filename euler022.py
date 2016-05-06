@@ -10,6 +10,9 @@ is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 497
 
 What is the total of all the name scores in the file?
 '''
+from time import time
+start = time()
+
 def valor_letra(letra):
 	if letra == 'A': return 1
 	elif letra == 'B': return 2
@@ -55,3 +58,4 @@ for nome in nomes:
 	posicao = posicao + 1
 
 print(total)
+print("Time: {0} secs".format(time()-start))
