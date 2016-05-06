@@ -5,6 +5,8 @@ The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
 Find the sum of all the primes below two million.
 '''
+from time import time
+start = time()
 
 def is_prime(n):
 	if n == 2 or n == 3: return True
@@ -26,3 +28,4 @@ for x in range(1, 2000000):
 		soma = soma + x
 
 print(soma)
+print("Time: {0} secs".format(time()-start))
