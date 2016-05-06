@@ -6,18 +6,13 @@ A palindromic number reads the same both ways. The largest palindrome made from 
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 '''
-def is_palindrome(numero):
-	str_numero = str(numero)
-	if str_numero == str_numero[::-1]:
-		return True
-	else:
-		return False
+import funcoes
 
 maior = 0
 for x in range(100, 1000):
 	for y in range(100, 1000):
 		produto = x * y
-		if is_palindrome(produto):
+		if funcoes.is_palindrome(produto):
 			if produto > maior:
 				maior = produto
 

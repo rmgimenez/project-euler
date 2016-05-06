@@ -11,13 +11,9 @@ Find the sum of the digits in the number 100!
 from time import time
 start = time()
 
-def fatorial( n ):
-   if n <1:   # base case
-       return 1
-   else:
-       return n * fatorial( n - 1 )  # recursive call
+import funcoes
 
-resultado_fatorial = fatorial(100)
+resultado_fatorial = funcoes.fatorial(100)
 resposta = 0
 for numero in str(resultado_fatorial):
 	resposta = resposta + int(numero)
