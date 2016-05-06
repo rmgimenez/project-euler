@@ -26,6 +26,9 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 '''
+from time import time
+start = time()
+
 conjunto = '''08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -68,7 +71,7 @@ def maior_produto_linha(matriz):
 def maior_produto_coluna(matriz):
 	maior = 0
 	for x in range(0,17):
-		for y in ragne(0,17):
+		for y in range(0,17):
 			produto = int(matriz[y][x]) * int(matriz[y+1][x]) * int(matriz[y+2][x]) * int(matriz[y+3][x])
 			if produto > maior:
 				maior = produto
@@ -83,16 +86,31 @@ def maior_produto_diagonal_esq_dir(matriz):
 				maior = produto
 	return maior
 
+# tem que acertar essa
 def maior_produto_diagonal_dir_esq(matriz):
 	maior = 0
-	for x in range(19,-1):
-		for y in range(19,3):
-			produto = int(matriz[y][x]) * int(matriz[y-1][x-1]) * int(matriz[y-2][x-2]) * int(matriz[y-3][x-3])
+	for x in range(0,17):
+		for y in range(19,2,-1):
+			produto = int(matriz[x][y]) * int(matriz[x+1][y-1]) * int(matriz[x+2][y-2]) * int(matriz[x+3][y-3])
+			#print(x,y,"=",matriz[x][y])
+			#print(x+1,y-1,"=",matriz[x+1][y-1])
+			#print(x+2,y-2,"=",matriz[x+2][y-2])
+			#print(x+3,y-3,"=",matriz[x+3][y-3])
 			if produto > maior:
 				maior = produto
 	return maior
 
+resultado = []
+resultado.append(maior_produto_linha(matriz))
+resultado.append(maior_produto_coluna(matriz))
+resultado.append(maior_produto_diagonal_esq_dir(matriz))
+resultado.append(maior_produto_diagonal_dir_esq(matriz))
+
+print("Maior produto:", max(resultado))
+print()
 print("maior da linha", maior_produto_linha(matriz))
-print("maior da coluna", maior_produto_linha(matriz))
-print("maior da diagonal - esq para dir", maior_produto_diagonal_esq_dir(matriz))
-print("maior da diagonal - dir para esq", maior_produto_diagonal_dir_esq(matriz))
+print("maior da coluna", maior_produto_coluna(matriz))
+print("maior_produto_diagonal_esq_dir", maior_produto_diagonal_esq_dir(matriz))
+print("maior_produto_diagonal_dir_esq", maior_produto_diagonal_dir_esq(matriz))
+
+print("Time: {0} secs".format(time()-start))
