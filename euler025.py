@@ -25,13 +25,16 @@ What is the index of the first term in the Fibonacci sequence to contain 1000 di
 import funcoes
 
 achou = False
-x = 1
+x = 3
+a = 1
+b = 1
 while achou == False:
-	fib = funcoes.fib_rec(x)
-	if fib > 10**10:
-	#if len(str(fib)) == 9:
+	fib = a + b
+	a,b = b,a+b
+
+	if len(str(fib)) == 1000:
 		achou = True
-		#print("Quantidade =",x," | Numero =",fib)
-	print("Quantidade =",x," | Numero =",fib)
+		print("Quantidade =",x," | Numero =",fib)
+	#print("Quantidade =",x," | Numero =",fib)
 	x += 1
 
