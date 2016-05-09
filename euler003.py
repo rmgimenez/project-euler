@@ -13,6 +13,6 @@ for x in range(1, round(numero**0.5)):
 			if funcoes.is_prime(x):
 					if x > maior_divisor:
 						maior_divisor = x
-						print(x)
+						#print(x)
 
 print('Maior divisor =', maior_divisor)
