@@ -1,8 +1,6 @@
 # teste
 import funcoes
 
-lista_primos = []
-for x in range(1,1000000):
-	if funcoes.is_prime(x):
-		lista_primos.append(x)
+lista = [1,2,3]
+print(len(lista))
 #print(len(lista_primos))
