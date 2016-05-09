@@ -1,5 +1,8 @@
 # teste
 import funcoes
 
-for x in range(1,10):
-	print(x,funcoes.fib_rec(x))
+lista_primos = []
+for x in range(1,1000000):
+	if funcoes.is_prime(x):
+		lista_primos.append(x)
+#print(len(lista_primos))

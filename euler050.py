@@ -13,29 +13,27 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 import funcoes
 
 lista_primos = []
+somas_possiveis = []
 resposta = 0
 maior_quantidade = 0
 
-for x in range(1,100):
+for x in range(1,1000000):
 	if funcoes.is_prime(x):
 		lista_primos.append(x)
 
 for x in lista_primos:
-	lista_menor = []
+	sequencia = []
 	for y in lista_primos:
-		if y >= x:
+		if y > x:
 			break
-		lista_menor.append(y)
-	#print(x, lista_menor)
-	soma = []
-	for z in lista_menor:
-		soma.append(z)
-		for t in lista_menor:
-			if t > z:
-				soma.append(t)
-				if sum(soma) == x:
-					if len(soma) > maior_quantidade:
-						maior_quantidade = len(soma)
-						resposta = x
+		else:
+			sequencia.append(y)
+	if sum(sequencia) in lista_primos:
+		if len(sequencia) > maior_quantidade:
+			resposta = sum(sequencia)
+			maior_quantidade = len(sequencia)
+			somas_possiveis.append(sequencia)
 
-print(resposta, maior_quantidade, soma_resposta)
+#print(somas_possiveis)
+print("Resposta:", resposta)
+print("Tamanho:", maior_quantidade)
