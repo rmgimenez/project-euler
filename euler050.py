@@ -11,7 +11,7 @@ The longest sum of consecutive primes below one-thousand that adds to a prime, c
 Which prime, below one-million, can be written as the sum of the most consecutive primes?
 
 Ver algum forma de começar a verificar pelos últimos números primos da lista.
-Na lista os últimos primos são: ...999931, 999953, 999959, 999961, 999979, 999983, por exemplo, se eu somar o 999931 com o 999953 
+Na lista os últimos primos são: ...999931, 999953, 999959, 999961, 999979, 999983, por exemplo, se eu somar o 999931 com o 999953
 já vai dar um número maior que 1000000
 '''
 import funcoes
@@ -20,80 +20,84 @@ import funcoes
 lista_primos = []
 
 # número máximo pra verificar, no caso do problema é 1000000
-limite = 1000
+limite = 1000000
 
 # variável que irá armazenar o indice do registro da lista de primos que não vou precisar somar, pois se somar eles já vai dar
 # mais que o limite
 nao_considerar_apos_indice = 0
-
-#usado para achar o nao_considerar_apos_indice 
-achou_indice = False
-
-# lista de todas as somas possiveis em sequencia que dá um número primo
-somas_possiveis = []
-
-# somas encontradas, o valor dessa lista será inserido na lista somas_possiveis
-somas = []
-
-# maior quantidade de numeros na soma
-maior_quantidade = 0
 
 # preenche a lista lista_primos com os números primos até o valor da variável limite
 for x in range(1, limite):
 	if funcoes.is_prime(x):
 		lista_primos.append(x)
 
-# retorna a maior quantidade de somas continuas cujo resultado é um número primo em uma determinada lista
-# deve se passar como parâmetro um lista de números primos
-def quant_somas(lista):
-	i = 0
+def maior_qtd_soma_seq(lista):
+	maior_sequencia = 0
 	somas_possiveis = []
+	soma = []
+	for x in lista:
+		soma.clear()
+		soma.append(x)
+		for y in lista:
+			if y > x:
+				soma.append(y)
+				if sum(soma) in lista:
+					somas_possiveis.append(list(soma))
+	for x in somas_possiveis:
+		if len(x) > maior_sequencia:
+			maior_sequencia = len(x)
+	return maior_sequencia
+
+def indice_corte(lista, qtd_itens_para_corte):
+	lista.reverse()
+	maior_numero_lista = max(lista)
+	i = 0
+	soma = []
 	while i < len(lista):
 		j = i + 1
-		soma = []
-		del soma[:] # apaga a lista
+		soma.clear()
 		soma.append(lista[i])
 		while j < len(lista):
-			if (sum(soma) + lista[j]) in lista:
-				somas_possiveis.append(lista[j])
-				j += 1
-			else:
-				j = 5000000000000			
+			if lista[j] < lista[i]:
+				soma.append(lista[j])
+				#print(soma)
+				if sum(soma) > maior_numero_lista:
+					j = len(lista) + 1
+				else:
+					if sum(lista) in lista:
+						print(round(qtd_itens_para_corte/2))
+						if len(lista) > round(qtd_itens_para_corte/2):
+							return j
+			j += 1
 		i += 1
-	return len(somas_possiveis)
 
-print(quant_somas(lista_primos))
+def nova_maior_lista(lista):
+	i = 0
+	lista.reverse()
+	maior_numero_lista = max(lista)
+	maior_sequencia = 0
+	soma = []
+	while i < len(lista):
+		j = i + 1
+		soma.clear()
+		soma.append(lista[i])
+		while j < len(lista):
+			if lista[j] < lista[i]:
+				soma.append(lista[j])
+				# fiz isso para que se o sum da lista soma for maior que o maior numero da lista
+				# ele já passa e muda o indice i do while, ou seja passa para o próximo número
+				# de início
+				if sum(soma) > maior_numero_lista:
+					j = len(lista) + 1
+				else:
+					if sum(soma) in lista:
+						if len(soma) > maior_sequencia:
+							maior_sequencia = len(soma)
+							print("Maior sequencia = ",maior_sequencia)
+							print(soma, "=" ,sum(soma))
+							print("------------------------------------")
+			j += 1
+		i += 1
+	return maior_sequencia
 
-
-# maior soma até um centésimo do limite
-def maior_quantidade_ate_um_cent():
-	primos = []
-	for x in range(1, limite / 100):
-		if funcoes.is_prime(x):
-			primos.append(x)
-
-'''
-usado para retornar o indice onde não precisarei somar, pois a soma de qualquer número
-acima da metade será maior que o limite
-'''
-for x in range(1, limite):
-	if funcoes.is_prime(x):
-		lista_primos.append(x)
-		if x > (limite / 2) and achou_indice == False:
-			nao_considerar_apos_indice = lista_primos.index(x) - 1
-			achou_indice = True
-print(nao_considerar_apos_indice, lista_primos[nao_considerar_apos_indice])
-
-
-
-'''
-41537 499979
-for x in range(1, limite):
-	if funcoes.is_prime(x):
-		lista_primos.append(x)
-		if x > (limite / 2) and achou_indice == False:
-			nao_considerar_apos_indice = lista_primos.index(x) - 1
-			achou_indice = True
-
-print(nao_considerar_apos_indice, lista_primos[nao_considerar_apos_indice])
-'''
+print(nova_maior_lista(lista_primos))

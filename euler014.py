@@ -29,7 +29,7 @@ maior_sequencia = 0
 for x in range(1, 1000000):
 	numero_processado = x
 	vezes = 1
-	
+
 	while numero_processado != 1:
 		if numero_processado % 2 == 0:
 			numero_processado = numero_par(numero_processado)
@@ -44,4 +44,3 @@ for x in range(1, 1000000):
 	#print(x,vezes)
 print("Resposta =", resposta)
 #print(maior_sequencia)
-
