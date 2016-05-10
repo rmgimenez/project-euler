@@ -13,6 +13,8 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 Ver algum forma de começar a verificar pelos últimos números primos da lista.
 Na lista os últimos primos são: ...999931, 999953, 999959, 999961, 999979, 999983, por exemplo, se eu somar o 999931 com o 999953
 já vai dar um número maior que 1000000
+
+resposta = 997651
 '''
 import funcoes
 
@@ -47,29 +49,6 @@ def maior_qtd_soma_seq(lista):
 		if len(x) > maior_sequencia:
 			maior_sequencia = len(x)
 	return maior_sequencia
-
-def indice_corte(lista, qtd_itens_para_corte):
-	lista.reverse()
-	maior_numero_lista = max(lista)
-	i = 0
-	soma = []
-	while i < len(lista):
-		j = i + 1
-		soma.clear()
-		soma.append(lista[i])
-		while j < len(lista):
-			if lista[j] < lista[i]:
-				soma.append(lista[j])
-				#print(soma)
-				if sum(soma) > maior_numero_lista:
-					j = len(lista) + 1
-				else:
-					if sum(lista) in lista:
-						print(round(qtd_itens_para_corte/2))
-						if len(lista) > round(qtd_itens_para_corte/2):
-							return j
-			j += 1
-		i += 1
 
 def nova_maior_lista(lista):
 	i = 0
