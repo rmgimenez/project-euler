@@ -9,79 +9,65 @@ If all the numbers from 1 to 1000 (one thousand) inclusive were written out in w
 NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters 
 and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance 
 with British usage.
-'''
-def nome_numero(numero):
-	if numero == 1:
-		return 'one'
-	elif numero == 2:
-		return 'two'
-	elif numero == 3:
-		return 'three'
-	elif numero == 4:
-		return 'four'
-	elif numero == 5:
-		return 'five'
-	elif numero == 6:
-		return 'six'
-	elif numero == 7:
-		return 'seven'
-	elif numero == 8:
-		return 'eight'
-	elif numero == 9:
-		return 'nine'
 
-	elif numero == 10:
-		return 'ten'
-	elif numero == 11:
-		return 'eleven'
-	elif numero == 12:
-		return 'twelve'
-	elif numero == 13:
-		return 'thirteen'
-	elif numero == 14:
-		return 'fourteen'
-	elif numero == 15:
-		return 'fifteen'
-	elif numero == 16:
-		return 'sixteen'
-	elif numero == 17:
-		return 'seventeen'
-	elif numero == 18:
-		return 'eighteen'
-	elif numero == 19:
-		return 'nineteen'
-
-
+resposta = 21124
 '''
-0 - oh, zero, nil, love, nought
-1 - one
-2 - two
-3 - three
-4 - four
-5 - five
-6 - six
-7 - seven
-8 - eight
-9 - nine
-10 - ten
-11 - eleven
-12 - twelve
-13 - thirteen
-14 - fourteen
-15 - fifteen
-16 - sixteen
-17 - seventeen
-18 - eighteen
-19 - nineteen
-20 - twenty
-21 - twenty-one
-30 - thirty
-40 - forty
-50 - fifty
-60 - sixty
-70 - seventy
-80 - eighty
-90 - ninety
-100 - a/one hundred
-1,000 - a/one thousand
-'''
+def qtd_letras_numero(numero):
+	if numero in (1,2,6,10): return 3
+	elif numero in (4,5,9): return 4
+	elif numero in (3,7,8,40,50,60): return 5	
+	elif numero in (11,12,20,30,80,90): return 6
+	elif numero in (15,16,70): return 7
+	elif numero in (13,14,18,19): return 8
+	elif numero == 17: return 9
+	else: 0
+
+total = 0
+for x in range(1,1001):
+	milhar = 0
+	centena = 0
+	dezena = 0
+	unidade = 0
+	qtd_letras = 0
+
+	numero = str(x)
+	tam_numero = len(numero)
+	if (tam_numero == 1):
+		unidade = int(numero)
+	elif tam_numero == 2:
+		unidade = int(numero[1])
+		dezena = int(numero[0])
+	elif tam_numero == 3:
+		unidade = int(numero[2])
+		dezena = int(numero[1])
+		centena = int(numero[0])
+	elif tam_numero == 4:
+		milhar = 1
+
+	if dezena == 1:
+		dezena = 0
+		unidade = 10 + unidade
+
+	if unidade != 0:
+		qtd_letras = qtd_letras + qtd_letras_numero(unidade)
+	if dezena != 0:
+		qtd_letras = qtd_letras + qtd_letras_numero(dezena*10)
+	if centena != 0:
+		qtd_letras = qtd_letras + qtd_letras_numero(centena) + 7 # 100 - a/one hundred
+		if unidade != 0 or dezena != 0:
+			qtd_letras = qtd_letras + 3 # conta o and
+	if milhar != 0:
+		qtd_letras = qtd_letras + qtd_letras_numero(milhar) + 8 # 1,000 - a/one thousand
+
+	total = total + qtd_letras
+	print("x =",x)
+	print("milhar =",milhar)
+	print("centena =",centena)
+	print("dezena =",dezena)
+	print("unidade =",unidade)
+	print("qtd letras =",qtd_letras)
+	print("--------------------------")
+
+	#qtd.append(qtd_letras_numero(x))
+
+print("Total =", total)
