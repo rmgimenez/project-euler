@@ -19,6 +19,9 @@ Resposta = 997651
 '''
 import funcoes
 
+from time import time
+start = time()
+
 # lista que armazena todos os números primos até o limite desejado que no caso do problema é < 1000000
 lista_primos = []
 
@@ -55,12 +58,13 @@ def maior_numero_soma_seq(lista):
 						if len(soma) > maior_sequencia:
 							maior_sequencia = len(soma)
 							maior_numero = sum(soma)
-							print("Maior sequencia = ",maior_sequencia)							
-							print(soma, "=" , maior_numero)
-							print("Indice i =", i,"de", tamanho_lista, "- % analisados =", (i/tamanho_lista)*100,"%")
-							print("------------------------------------")
+							#print("Maior sequencia = ",maior_sequencia)							
+							#print(soma, "=" , maior_numero)
+							#print("Indice i =", i,"de", tamanho_lista, "- % analisados =", (i/tamanho_lista)*100,"%")
+							#print("------------------------------------")
 			j += 1
 		i += 1
 	return maior_numero
 
 print("Resposta =", maior_numero_soma_seq(lista_primos))
+print("Time: {0} secs".format(time()-start))

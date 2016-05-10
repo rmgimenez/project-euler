@@ -32,6 +32,25 @@ def nome_numero(numero):
 
 	elif numero == 10:
 		return 'ten'
+	elif numero == 11:
+		return 'eleven'
+	elif numero == 12:
+		return 'twelve'
+	elif numero == 13:
+		return 'thirteen'
+	elif numero == 14:
+		return 'fourteen'
+	elif numero == 15:
+		return 'fifteen'
+	elif numero == 16:
+		return 'sixteen'
+	elif numero == 17:
+		return 'seventeen'
+	elif numero == 18:
+		return 'eighteen'
+	elif numero == 19:
+		return 'nineteen'
+
 
 '''
 0 - oh, zero, nil, love, nought
