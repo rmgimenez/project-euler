@@ -19,8 +19,6 @@ I’d say that this one is pretty quick and painless.
 
 Essa é a forma para achar o resultado de um problema em módulo. Isso é utilizado em vários problemas
 '''
-import time
- 
 n = 2
 for i in range(7830456):
     n = (2 * n) % 10000000000
@@ -29,7 +27,7 @@ n *= 28433
 n += 1
  
 n = n % 10000000000
- 
+
 print("Resultado =",n)
 
-# resolvido
+# resolvido 8739992577

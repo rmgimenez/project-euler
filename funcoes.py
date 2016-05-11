@@ -98,3 +98,11 @@ def fib_rec(n):
 	if n==1 or n==2:
 		return 1
 	return fib_rec(n-1) + fib_rec(n-2)
+
+'''
+Exponenciação modular
+Ela deve ser usada quando for fazer a exnoenciação em número gigante e eu quiser apenas a parte final dele
+Ajuda: http://aditya.vaidya.info/blog/2014/06/27/modular-exponentiation-python/
+'''
+def expmod(a,b,c):
+    return (a**b)%c
