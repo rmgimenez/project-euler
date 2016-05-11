@@ -59,3 +59,5 @@ for nome in nomes:
 
 print(total)
 print("Time: {0} secs".format(time()-start))
+
+# resolvido

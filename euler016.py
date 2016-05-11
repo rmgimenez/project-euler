@@ -11,3 +11,5 @@ for x in str(numero):
 	soma = soma + int(x) 
 
 print(soma)
+
+# resolvido

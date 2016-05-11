@@ -35,5 +35,4 @@ for linha in linhas:
 
 print(resposta)
 	
-#print(dir(linhas))
-#print(linhas)
+# resolvido

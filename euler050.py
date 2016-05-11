@@ -68,3 +68,5 @@ def maior_numero_soma_seq(lista):
 
 print("Resposta =", maior_numero_soma_seq(lista_primos))
 print("Time: {0} secs".format(time()-start))
+
+# resolvido

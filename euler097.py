@@ -32,7 +32,4 @@ n = n % 10000000000
  
 print("Resultado =",n)
 
-#print(multiplicador * elevado + 1)
-#print(20**5)
-#print(5*math.log(20))
-#print(2**7830457)
+# resolvido

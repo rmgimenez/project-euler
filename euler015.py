@@ -54,3 +54,5 @@ for row in range(0,tamanho_matriz):
 	row += 1
 print(matriz[tamanho_matriz-1][tamanho_matriz-1])
 #for x in matriz: print(x)
+
+# resolvido

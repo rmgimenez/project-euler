@@ -21,3 +21,5 @@ for numero in str(resultado_fatorial):
 print(resposta)
 
 print("Time: {0} secs".format(time()-start))
+
+# resolvido

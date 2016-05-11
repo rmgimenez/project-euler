@@ -14,3 +14,5 @@ for i in range(1, 1001):
 print(str(total)[-10::])
 
 print("Time: {0} secs".format(time()-start))
+
+# resolvido

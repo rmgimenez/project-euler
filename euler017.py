@@ -71,3 +71,5 @@ for x in range(1,1001):
 	#qtd.append(qtd_letras_numero(x))
 
 print("Total =", total)
+
+# resolvido
