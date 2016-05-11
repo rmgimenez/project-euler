@@ -2,7 +2,27 @@
 import funcoes
 import math
 
-lista = [1,2,3]
-print(len(lista))
+from time import time
+start = time()
 
-print(math.factorial(40)/(math.factorial(20)*math.factorial(20)))
+import funcoes
+
+resultado_fatorial = funcoes.fatorial(100)
+resposta = 0
+for numero in str(resultado_fatorial):
+	resposta = resposta + int(numero)
+
+print(resposta)
+
+print("Time: {0} secs".format(time()-start))
+
+#start = time()
+
+resultado_fatorial = math.factorial(100)
+resposta = 0
+for numero in str(resultado_fatorial):
+	resposta = resposta + int(numero)
+
+print(resposta)
+
+print("Time: {0} secs".format(time()-start))

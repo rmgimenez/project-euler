@@ -33,3 +33,4 @@ print(resposta)
 Ajuda sobre os break e continue que coloquei no código
 http://stackoverflow.com/questions/6346492/how-to-stop-a-for-loop
 '''
+# resolvido

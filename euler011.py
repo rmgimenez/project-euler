@@ -114,3 +114,5 @@ print("maior_produto_diagonal_esq_dir", maior_produto_diagonal_esq_dir(matriz))
 print("maior_produto_diagonal_dir_esq", maior_produto_diagonal_dir_esq(matriz))
 
 print("Time: {0} secs".format(time()-start))
+
+# resolvido

@@ -44,3 +44,5 @@ for x in range(1, 1000000):
 	#print(x,vezes)
 print("Resposta =", resposta)
 #print(maior_sequencia)
+
+# resolvido

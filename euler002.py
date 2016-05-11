@@ -17,3 +17,5 @@ while x < 4000000:
 	b = x
 
 print(soma)
+
+# resolvido

@@ -50,3 +50,5 @@ while numeros_divisores <= 500:
 	posicao = posicao + 1
 
 print(numero)
+
+# resolvido

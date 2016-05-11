@@ -22,3 +22,5 @@ while procurar:
 		i = i + 2
 
 print('Menor: %d' % i)
+
+# resolvido

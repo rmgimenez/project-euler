@@ -28,3 +28,5 @@ def quadrado_da_soma(numeros):
 
 numero = 100
 print(quadrado_da_soma(numero) - soma_dos_quadrados(numero))
+
+# resolvido

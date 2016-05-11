@@ -17,3 +17,5 @@ for x in range(1, 2000000):
 
 print(soma)
 print("Time: {0} secs".format(time()-start))
+
+# resolvido

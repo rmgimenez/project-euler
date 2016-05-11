@@ -17,3 +17,5 @@ for x in range(100, 1000):
 				maior = produto
 
 print(maior)
+
+# resolvido

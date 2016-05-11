@@ -16,3 +16,5 @@ for x in range(1, round(numero**0.5)):
 						#print(x)
 
 print('Maior divisor =', maior_divisor)
+
+# resolvido

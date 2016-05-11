@@ -210,3 +210,5 @@ soma = 0
 for x in numero.split():
 	soma = soma + int(x)
 print(soma)
+
+# resolvido

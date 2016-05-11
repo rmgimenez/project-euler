@@ -19,3 +19,5 @@ while quantidade != 10001:
 		quantidade = quantidade + 1
 	x = x + 1
 print(x - 1)
+
+# resolvido
