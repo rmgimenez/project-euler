@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Large non-Mersenne prime
 Problem 97

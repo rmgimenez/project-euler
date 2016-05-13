@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Triangular, pentagonal, and hexagonal
 Problem 45
@@ -19,32 +20,27 @@ def pentagono(n):
 def hexagono(n):
 	return float(n*(2*n-1))
 
+lst_triangulos = []
+lst_pentagonos = []
+lst_hexagonos = []
+
 maior_t = 0
 maior_p = 0
 maior_h = 0
 
-for x in range(1,30000):
-	t = triangulo(x)
-	i = 1
-	while pentagono(i) <= t:
-		p = pentagono(i)
-		if p == t:
-			if x > maior_t: maior_t = x
-			if i > maior_p: maior_p = i
-		i += 1
+inicio_t = 285
+inicio_p = 165
+inicio_h = 143
 
-'''
-	for i in range(1,round(t)):
-		p = pentagono(i)
-		if p == t:
-			if x > maior_t: maior_t = x
-			if i > maior_p: maior_p = i
-'''
-print(maior_t, maior_p, maior_h)
+for x in range(inicio_t, inicio_t+15):
+	lst_triangulos.append(triangulo(x))
 
-'''
-for x in range(1,300):
-	triangulos.append(triangulo(x))
-	pentagonos.append(pentagono(x))
-	hexagonos.append(hexagono(x))
-'''
+for x in range(inicio_p, inicio_p+10):
+	lst_pentagonos.append(pentagono(x))
+
+for x in range(inicio_h, inicio_h+5):
+	lst_hexagonos.append(hexagono(x))
+
+print(lst_triangulos)
+print(lst_pentagonos)
+print(lst_hexagonos)
