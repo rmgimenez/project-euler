@@ -1,4 +1,5 @@
 # coding: utf-8
+import math
 
 '''
 Se o número for primo a função retorna True, se não retorna False
@@ -106,3 +107,48 @@ Ajuda: http://aditya.vaidya.info/blog/2014/06/27/modular-exponentiation-python/
 '''
 def expmod(a,b,c):
     return (a**b)%c
+
+'''
+Calcula pentagono de um número
+'''
+def pentagono(n):
+	return n*(3*n-1)/2
+
+def triangulo(n):
+	return n*(n+1)/2
+
+def hexagono(n):
+	return float(n*(2*n-1))
+
+'''
+Verifica se um número é pentagonal
+'''
+def num_is_pentagonal(x):
+	n = (math.sqrt((24*x) + 1) + 1)/6
+	resto = n - round(n)
+	if resto == 0:
+		return True
+	else:
+		return False
+
+'''
+Verifica se um número é hexagonal
+'''
+def num_is_hexagonal(x):
+	n = (math.sqrt((8*x) + 1) + 1)/4
+	resto = n - round(n)
+	if resto == 0:
+		return True
+	else:
+		return False
+
+'''
+Verifica se um número é triangular
+'''
+def num_is_triangular(x):
+	n = (math.sqrt((8*x) + 1) - 1)/2
+	resto = n - round(n)
+	if resto == 0:
+		return True
+	else:
+		return False

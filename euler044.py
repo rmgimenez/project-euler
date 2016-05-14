@@ -10,20 +10,41 @@ It can be seen that P4 + P7 = 22 + 70 = 92 = P8. However, their difference, 70 �
 
 Find the pair of pentagonal numbers, Pj and Pk, for which their sum and difference are pentagonal and D = |Pk − Pj| is minimised; what is the value of D?
 '''
-def pentagono(n):
-	return n*(3*n-1)/2
+import funcoes
 
 achou = False
 i = 1
 pentagonos = []
+
 while achou ==  False:
-	pentagonos.append(pentagono(i))
+	pentagonos.append(funcoes.pentagono(i))
 	for x in pentagonos:
 		for y in pentagonos:
-			if x != y:
+			if (y > x):
 				soma = x + y
-				sub = y - x
-				if (soma in pentagonos) and (sub in pentagonos):
-					achou = True
-					print(x, y)
+				if (funcoes.num_is_pentagonal(soma)):
+					sub = y - x
+					if (funcoes.num_is_pentagonal(sub)):
+						achou = True
+						print(x, y)
+	print(i)
 	i += 1
+
+'''
+Um número é triangular quando ele é da forma n (n+1) / 2.
+
+Ou seja, você tem de resolver uma equação de segundo grau, e depois checar se o resultado é inteiro.
+
+Por exemplo: digamos que você quer saber se 1234567 é um número triangular.
+
+n (n + 1) / 2 = 1234567
+
+Resolva a equação de segundo grau acima.
+
+O resultado deve ser:
+n = 1570.8479086440404
+e
+n = -1571.8479086440404
+
+Como n não é inteiro, então 1234567 não é um número triangular.
+'''
