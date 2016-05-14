@@ -123,32 +123,16 @@ def hexagono(n):
 '''
 Verifica se um número é pentagonal
 '''
-def num_is_pentagonal(x):
-	n = (math.sqrt((24*x) + 1) + 1)/6
-	resto = n - round(n)
-	if resto == 0:
-		return True
-	else:
-		return False
+def is_pentagono(N): return ((math.sqrt(24 * N + 1) + 1) / 6.0).is_integer()
 
 '''
 Verifica se um número é hexagonal
 '''
-def num_is_hexagonal(x):
-	n = (math.sqrt((8*x) + 1) + 1)/4
-	resto = n - round(n)
-	if resto == 0:
-		return True
-	else:
-		return False
+def is_hexagonal(x):
+	return ((math.sqrt((8*x) + 1) + 1)/4).is_integer()
 
 '''
 Verifica se um número é triangular
 '''
-def num_is_triangular(x):
-	n = (math.sqrt((8*x) + 1) - 1)/2
-	resto = n - round(n)
-	if resto == 0:
-		return True
-	else:
-		return False
+def is_triangular(x):
+	return ((math.sqrt((8*x) + 1) - 1)/2).is_integer()

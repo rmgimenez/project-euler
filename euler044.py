@@ -17,18 +17,19 @@ i = 1
 pentagonos = []
 
 while achou ==  False:
-	pentagonos.append(funcoes.pentagono(i))
-	for x in pentagonos:
-		for y in pentagonos:
-			if (y > x):
-				soma = x + y
-				if (funcoes.num_is_pentagonal(soma)):
-					sub = y - x
-					if (funcoes.num_is_pentagonal(sub)):
-						achou = True
-						print(x, y)
-	print(i)
 	i += 1
+	n = funcoes.pentagono(i)
+	j = i - 1
+	while j > 0:
+		m = funcoes.pentagono(j)
+		soma = m + n
+		sub = n - m
+		if(funcoes.is_pentagono(soma) and funcoes.is_pentagono(sub)):
+			print("Indices =",i,j)
+			print("Resposta =",n - m)
+			achou = True
+
+		j -= 1
 
 '''
 Um número é triangular quando ele é da forma n (n+1) / 2.
@@ -48,3 +49,5 @@ n = -1571.8479086440404
 
 Como n não é inteiro, então 1234567 não é um número triangular.
 '''
+
+# resolvido
