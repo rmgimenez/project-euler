@@ -10,37 +10,23 @@ Hexagonal	 	Hn=n(2n−1)	 	1, 6, 15, 28, 45, ...
 It can be verified that T285 = P165 = H143 = 40755.
 
 Find the next triangle number that is also pentagonal and hexagonal.
+
+Posso alterar o problema, pois todos os número triangulares são hexagonais, não precisaria fazer esse teste, mas por enquanto o script faz esse teste
 '''
-def triangulo(n):
-	return n*(n+1)/2
+import funcoes
+from time import time
+start = time()
 
-def pentagono(n):
-	return n*(3*n-1)/2
+achou = False
+# comecei com i = 285, pois abaixo disso não interessa para o problema
+i = 285
+while achou == False:
+	i += 1
+	t = funcoes.triangulo(i)
+	if funcoes.is_pentagono(t) and funcoes.is_hexagonal(t):
+		achou = True
+		print(t)
 
-def hexagono(n):
-	return float(n*(2*n-1))
+print("Time: {0} secs".format(time()-start))
 
-lst_triangulos = []
-lst_pentagonos = []
-lst_hexagonos = []
-
-maior_t = 0
-maior_p = 0
-maior_h = 0
-
-inicio_t = 285
-inicio_p = 165
-inicio_h = 143
-
-for x in range(inicio_t, inicio_t+15):
-	lst_triangulos.append(triangulo(x))
-
-for x in range(inicio_p, inicio_p+10):
-	lst_pentagonos.append(pentagono(x))
-
-for x in range(inicio_h, inicio_h+5):
-	lst_hexagonos.append(hexagono(x))
-
-print(lst_triangulos)
-print(lst_pentagonos)
-print(lst_hexagonos)
+# resolvido
