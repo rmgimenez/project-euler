@@ -136,3 +136,18 @@ Verifica se um número é triangular
 '''
 def is_triangular(x):
 	return ((math.sqrt((8*x) + 1) - 1)/2).is_integer()
+
+'''
+Retorna true se o ano é bissexto e false se não for
+'''
+def is_leap_year(ano):
+	if (ano % 4 == 0):
+		if (ano % 100):
+			if (ano % 400 == 0):
+				return True
+			else:
+				return False
+		else:
+			return True
+	else:
+		return False
