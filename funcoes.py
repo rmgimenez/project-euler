@@ -141,13 +141,17 @@ def is_triangular(x):
 Retorna true se o ano é bissexto e false se não for
 '''
 def is_leap_year(ano):
-	if (ano % 4 == 0):
-		if (ano % 100):
+	if (ano % 2 != 0):
+		return False
+	else:
+		if (ano % 100 == 0):
 			if (ano % 400 == 0):
 				return True
 			else:
 				return False
 		else:
-			return True
-	else:
-		return False
+			if (ano % 4 == 0):
+				return True
+			else:
+				return False
+
