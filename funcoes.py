@@ -95,10 +95,24 @@ def fatorial( n ):
    else:
        return n * fatorial( n - 1 )  # recursive call
 
+'''
+Fibonacci com recursão
+'''
 def fib_rec(n):
 	if n==1 or n==2:
 		return 1
 	return fib_rec(n-1) + fib_rec(n-2)
+
+'''
+Tri fibonacci com recursão
+'''
+def tri_fib(n):
+	if n == 1 or n == 2:
+		return 1
+	elif n <= 0:
+		return 0
+	else:
+		return tri_fib(n-1) + tri_fib(n-2) + tri_fib(n-3)
 
 '''
 Exponenciação modular
