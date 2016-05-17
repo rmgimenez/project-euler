@@ -26,5 +26,12 @@ def tri_fib(n):
 
 print(tri_fib(8))
 
+def fibonacci(n):
+    if n < 2:
+        return n
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+print(fibonacci(1))
+
 
 print("Time: {0} secs".format(time()-start))
