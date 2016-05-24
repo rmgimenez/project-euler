@@ -89,9 +89,24 @@ matriz = list(matriz.split("\n"))
 for x in matriz:
 	triangulo.append(list(x.split(" ")))
 
-i = 0
+triangulo = list(reversed(triangulo))
+
+i = 1 # começa da segunda linha
 while i < len(triangulo):
-	print(triangulo[i])
-	i += 1
+  linha_atual = list(triangulo[i])
+  linha_anterior = list(triangulo[i-1])
+  j = 0
+  while j < len(linha_atual):
+    soma1 = int(linha_atual[j]) + int(linha_anterior[j])
+    soma2 = int(linha_atual[j]) + int(linha_anterior[j+1])
+    if soma1 > soma2:
+      triangulo[i][j] = soma1
+    else:
+      triangulo[i][j] = soma2
+    j += 1
+  i += 1
+print("Resposta: ", triangulo[len(triangulo)-1])
 
 print("Time: {0} secs".format(time()-start))
+
+# resolvido
