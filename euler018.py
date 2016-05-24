@@ -63,6 +63,21 @@ Now you've got triangle of lower dimension:
   7  4
 10 13 15  
 Now go on until you get one value, which is exactly 23.
+
+f = open('p067_triangle.txt')
+t = []
+for i in f.readlines():
+    a = i.rstrip('\n').split(" ")
+    aux = []
+    for b in a:
+        aux.append(int(b))
+    t.append(aux)
+f.close()
+
+for i in range(len(t)-2,-1,-1):
+    for j in range(0,i+1):
+        t[i][j]=t[i][j]+max(t[i+1][j:j+2])
+print(t[0][0])
 '''
 from time import time
 start = time()
