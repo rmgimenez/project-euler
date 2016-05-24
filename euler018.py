@@ -32,6 +32,37 @@ Find the maximum total from top to bottom of the triangle below:
 NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route.
 However, Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be 
 solved by brute force, and requires a clever method! ;o)
+
+
+Ajuda: http://stackoverflow.com/questions/8002252/euler-project-18-approach
+It's something called dynamic programming.
+
+You have such triangle:
+
+   3
+  7 4
+ 2 4 6  
+8 5 9 3
+When you move from the bottom to the top, you can calculate the best choices on last iteration. In this case you take the last row 8 5 9 3 and maximize sum in addition to previous line.
+
+Iteration 1: Assume that you are on last-1 step.
+
+You have line 2 4 6 let iterate on it.
+
+From 2, you can go to either 8 or 5, so 8 is better (maximize you result from 3) so you calculate first sum 8 + 2 = 10
+
+From 4, you can go to either 5 or 9, so 9 is better (maximize you result from 4) so you calculate second sum 9 + 4 = 13
+
+From 6, you can go to either 9 or 3, so 9 is better again (maximize you result from 6) so you calculate third sum 9 + 6 = 15
+
+This is the end of first iteration and you got the line of sums 10 13 15.
+
+Now you've got triangle of lower dimension:
+
+    3
+  7  4
+10 13 15  
+Now go on until you get one value, which is exactly 23.
 '''
 from time import time
 start = time()
